@@ -23,3 +23,15 @@ const anotherFun = async (urlApi) => {
 }
 
 anotherFun(API);
+
+//Porblema que hemos tenido que resolver
+//Capturar el error de una petición a una API aque no existía
+export async function runCode() {
+    const url = 'https://domain-api-com';
+    try {
+      await fetch(url)
+    } catch (error) {
+      throw new Error('API Not Found');
+    }
+}
+  
